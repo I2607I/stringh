@@ -1,4 +1,4 @@
-# s21_string
+# string.h
 
 ### to run
 
