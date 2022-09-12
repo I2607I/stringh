@@ -32,12 +32,7 @@ ifeq ($(OS), linux)
 endif
 
 
-all: clean check s21_string.a test
-
-check:
-	$(CPPCH) $(CHECK_FILES)
-	$(COPY) $(LINTCFG_WAY) $(LINTCFG)
-	$(PY) $(LINT_WAY) $(EXTENSION) $(CHECK_FILES)
+all: clean string.a test
 
 clean:
 	$(DELETE) $(TO_DELETE) $(EXECUTABLE) $(LINTCFG)
@@ -52,7 +47,7 @@ gcov_report: test
 	genhtml -o report test.info
 
 
-s21_string.a:
+string.a:
 	$(CC) -c $(FUNCS)
 	ar rc s21_string.a s21_string.o
 	ar rc libs21_string.a s21_string.o
