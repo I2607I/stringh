@@ -13,4 +13,5 @@ make test
 -получить отсчёт о тестах в виде html-страницы
 ```
 make gcov_report
+g
 ```
