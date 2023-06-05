@@ -4,7 +4,7 @@
 #include <string.h>
 
 #include "errlist.h"
-#include "s21_string.h"
+#include "string.h"
 
 START_TEST(s21_memchr_test) {
     char testStr[] = "ABCDE";

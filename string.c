@@ -1,4 +1,4 @@
-#include "s21_string.h"
+#include "string.h"
 
 #include <stdarg.h>
 #include <stdio.h>

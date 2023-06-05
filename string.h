@@ -1,5 +1,5 @@
-#ifndef SRC_S21_STRING_H_
-#define SRC_S21_STRING_H_
+#ifndef SRC_STRING_H_
+#define SRC_STRING_H_
 
 typedef unsigned long s21_size_t;
 #define S21_NULL ((void *)0)
@@ -35,4 +35,4 @@ char *IntStr(char *buf, int is_int, long int n, char flag, char flag3, int width
 char *DoubleStr(char *buf, long double n, char flag, char flag3, int width, int prec);
 int LenInt(int n);
 
-#endif  // SRC_S21_STRING_H_
+#endif  // SRC_STRING_H_

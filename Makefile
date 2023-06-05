@@ -3,12 +3,12 @@ TEST_FLAGS=-I -L -lcheck `pkg-config --cflags --libs check`
 CPP_FLAGS=-Wall -Wextra -Werror
 DEBUG_FLAG=-g
 GCOV_FLAG=--coverage
-OBJECTS=s21_string.o s21_test.o
-FUNCS=s21_string.c
-#TEST_C=s21_test.c s21_string.a
-TEST_C=s21_test.c s21_string.c 
-HEADER=s21_string.h
-EXECUTABLE=s21_test.out
+OBJECTS=string.o test.o
+FUNCS=string.c
+#TEST_C=test.c string.a
+TEST_C=test.c string.c 
+HEADER=string.h
+EXECUTABLE=test.out
 CC=gcc
 LINT_WAY=../materials/linters/cpplint.py
 LINTCFG_WAY=../materials/linters/CPPLINT.cfg
@@ -35,12 +35,12 @@ endif
 all: clean string.a test
 
 clean:
-	$(DELETE) $(TO_DELETE) $(EXECUTABLE) $(LINTCFG)
+	$(DELETE) $(TO_DELETE) $(EXECUTABLE) $(LINTCFG) report
 
 test:
 	$(CC) $(DEBUG_FLAG) $(GCOV_FLAG) $(TEST_C) -o $(EXECUTABLE) $(TEST_FLAGS)
 # $(CC) $(DEBUG_FLAG) $(GCOV_FLAG) $(TEST_C) -o $(EXECUTABLE) $(TEST_FLAGS)
-	./s21_test.out
+	./test.out
 
 gcov_report: test
 	lcov -t "test" -o test.info -c -d .
@@ -49,10 +49,10 @@ gcov_report: test
 
 string.a:
 	$(CC) -c $(FUNCS)
-	ar rc s21_string.a s21_string.o
-	ar rc libs21_string.a s21_string.o
-	ranlib s21_string.a
-	ranlib libs21_string.a
+	ar rc string.a string.o
+	ar rc libstring.a string.o
+	ranlib string.a
+	ranlib libstring.a
 
 valgrind_check:
 	CK_FORK=no valgrind --tool=memcheck ./$(EXECUTABLE)
