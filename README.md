@@ -1,6 +1,35 @@
 # string.h
 
-### to run
+## Description
+Реализация библеотеки string.h языка C.
+Реализованы функции:
+- memchr
+- memcmp
+- memcpy
+- memmove
+- memset
+- strcat
+- strncat
+- strchr
+- strcmp
+- strncmp
+- strcpy
+- strncpy
+- strcspn
+- strerror
+- strlen
+- strpbrk
+- strrchr
+- strspn
+- strstr
+- strtok
+- to_upper
+- to_lower
+- insert
+- trim
+- sprintf
+
+## to run
 
 -собрать библиотеку
 ```
