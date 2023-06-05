@@ -3,6 +3,7 @@
 ## Description
 Реализация библеотеки string.h языка C.
 Реализованы функции:
+- sprintf
 - memchr
 - memcmp
 - memcpy
@@ -27,7 +28,6 @@
 - to_lower
 - insert
 - trim
-- sprintf
 
 ## to run
 
